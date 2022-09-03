@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <script src="task05.js"></script>
+    <style>
+        .box {
+            margin-top: 50px;
+            width: 420px;
+            /* border: 5px double black; */
+            background-color:#fffdd6;
+            line-height: 3;border-radius: 8px;
+        box-shadow: 1px 1px 8px 1px black;
+        }
+
+        .box h1 {
+            margin: 0px;
+
+        }
+
+        .box1 {
+            /* background-color: red; */
+            display: none;
+        }
+
+        input{
+            border-radius: 3px;padding: 3px;
+        }
+        #t_day {
+            margin-left: 45px;
+        }
+
+        #Pr_d {
+            margin-left: 9px;
+        }
+
+        #P_day {
+            margin-left: 25px;
+        }
+
+        #A_day {
+            margin-left: 35px;
+        }
+
+        #_yes {
+            margin-left: 45px;
+            margin-right: 10px;
+        }
+
+        #_no {
+            margin-left: 40px;
+       margin-right: 10px; }
+
+        #ttl_slr1 {
+            margin-left: 35px;
+        }
+
+        #cl_day {
+            margin-left: 105px;
+        }
+
+        #Pr_days {
+            margin-left: -5px;
+        }
+
+        #ttl_slr {
+            margin-left: 48px;
+
+        }
+    </style>
+</head>
+
+<body>
+    <center>
+        <div class="box">
+            <h1 align="center">Employee's Salary!!</h1>
+
+            Total Days in Month :- &nbsp;&nbsp;<input type="number" id="t_day" oninput="day()" />
+            <br />
+            Employee Per Day Salary :- &nbsp;&nbsp;
+            <input type="number" id="Pr_d" oninput="per()" />
+            <br />
+            Employee Present Days :- &nbsp;&nbsp;<input type="number" id="P_day" onkeyup="presnt()" />
+            <br />
+
+            Employee Absent Day :- &nbsp;&nbsp;<input type="number" id="A_day" onfocus="absnt()" />
+            <br />
+            Allow Leave Days Salary :- &nbsp;&nbsp;<input type="radio" name="r" id="_yes" class="rd"
+                onchange="show()" />Yes &nbsp;&nbsp;<input type="radio" name="r" id="_no" class="rd"
+                onchange="hide()" />No
+            <br />
+            <div class="box1" id="bx1">
+                Enter CL Days :- <input type="number" id="cl_day" onkeyup="clr()" />
+                <br />
+                Employee Actual Present Days :- &nbsp;&nbsp;<input type="number" id="Pr_days"  />
+                <br />
+                Employee Actual Absent Days :- &nbsp;&nbsp;<input type="number" id="Ab_days"  />
+                <br />
+                Employee Total Salary :- &nbsp;&nbsp;<input type="number" id="ttl_slr" onfocus="ttls()" />
+            </div>
+            <div id="ttl">
+                Employee Total Salary :- &nbsp;&nbsp;<input type="number" id="ttl_slr1" class="tts" onfocus="slry()" />
+            </div>
+    </center>
+</body>
+
+</html>
