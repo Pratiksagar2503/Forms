@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form</title>
+    <script src="validation.js"></script>
+    <style>
+      * {
+        margin: 0px;
+        padding: 0px;
+        box-sizing: border-box;
+      }
+
+      .box {
+        background-color: rgb(230, 224, 241);
+        width: 480px;
+        /* border: 1px solid black; */
+        margin: auto;
+        margin-top: 30px;
+        border-radius: 10px;
+        box-shadow: 1px 1px 2px 1px black;
+      }
+
+      table {
+        text-align: left;
+        margin: auto;
+      }
+
+      h1 {
+        margin: 10px;
+      }
+
+      th {
+        padding: 8px 20px;
+      }
+
+      td {
+        padding: 8px 15px;
+      }
+
+      input {
+        border-radius: 5px;
+        padding: 3px 15px;
+      }
+
+      pre {
+        position: relative;
+        bottom: 2px;
+        left: 1px;
+        display: inline;
+        color: blue;
+      }
+
+      pre:hover {
+        text-decoration: underline;
+      }
+
+      .fld {
+        width: 100%;
+      }
+
+      select {
+        width: 100%;
+        text-align: center;
+        padding: 3px;
+        border-radius: 5px;
+      }
+
+      .tik {
+        margin-top: 3px;
+      }
+
+      .tik:hover {
+        cursor: pointer;
+      }
+
+      #ml {
+        margin-left: 70px;
+      }
+
+      #hin {
+        margin-left: 20px;
+      }
+
+      #sbt {
+        width: 60%;
+        height: 35px;
+        margin-left: 80px;
+        background-color: royalblue;
+        border-radius: 6px;
+        color: white;
+        font-size: 16px;
+        border: none;
+        font-weight: bold;
+      }
+
+      #sbt:hover {
+        background-color: rgb(31, 80, 224);
+        cursor: pointer;
+      }
+
+      ul {
+        margin-left: 50px;
+        list-style-type: none;
+        display: flex;
+      }
+
+      ul li {
+        /* display: inline; */
+        margin-left: 50px;
+      }
+    </style>
+  </head>
+
+  <body>
+    
+
+  <div class="box">
+    <table>
+      <form action="" method="get" autocomplete="on" ;>
+        <tr>
+          <td colspan="2">
+            <h1 align="center">Enquiry Form!</h1>
+          </td>
+        </tr>
+        <tr>
+          <th>Name</th>
+          <td><input type="text" id="nm" class="fld" /></td>
+        </tr>
+        <tr>
+          <th>Contact No.</th>
+          <td><input type="text" id="no" class="fld" /></td>
+        </tr>
+        <tr>
+          <th>e-mail</th>
+          <td><input type="text" id="eml" class="fld" /></td>
+        </tr>
+        <tr>
+          <th>Password</th>
+          <td><input type="password" id="pwd" class="fld" /><input type="checkbox" class="tik" onclick="view()">
+            <pre>Show</pre>
+          </td>
+        </tr>
+        <tr>
+          <th>Confirm Password</th>
+          <td><input type="password" id="cpwd" class="fld" /><input type="checkbox" class="tik" onclick="views()">
+            <pre>Show</pre>
+          </td>
+        </tr>
+
+        <th>City</th>
+        <td>
+          <select id="slt" class="slt">
+            <option value="none">Select</option>
+            <option value="Indore">Indore</option>
+            <option value="Ujjain">Ujjain</option>
+            <option value="Bhopal">Bhopal</option>
+            <option value="Dewas">Dewas</option>
+            <option value="Gwalior">Gwalior</option>
+          </select>
+        </td>
+        </tr>
+        <tr>
+          <th>Gender</th>
+          <td colspan="2">
+            <input type="radio" id="ml" name="nm" value="Male" class="rad" />&nbsp;&nbsp;Male &nbsp;
+            <input type="radio" id="fml" class="rad" name="nm" value="Female" />&nbsp;&nbsp;Female &nbsp;
+          </td>
+        </tr>
+        <tr>
+          <th>Languages Known</th>
+          <td>
+            <input type="checkbox" class="check" value=" Hindi" />&nbsp; Hindi &nbsp;&nbsp;
+            <input type="checkbox" class="check" value="English" />&nbsp; English &nbsp;&nbsp;
+            <input type="checkbox" class="check" value="Others" />&nbsp; Others&nbsp;&nbsp;
+          </td>
+        </tr>
+        <tr>
+          <th>Upload picture</th>
+          <td><input type="file" id="fl" /></td>
+        </tr>
+        <tr>
+          <td colspan="2"><input type="submit" value="Submit" id="sbt" onclick="show()" /></td>
+        </tr>
+      </form>
+    </table>
+  </div>
+  </body>
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Collage-CoarseFee</title>
+  <link rel="stylesheet" href="MIST.css" />
+</head>
+
+<body>
+  <div class="box">
+    <h1 class="head" align="center">Malwa Institute of Technology</h1>
+    <h4 class="ad" align="center">
+      Address: Bypass Road, Pragati Vihar, Indore, Madhya Pradesh 452016
+    </h4>
+    <h3 class="rt" align="center">Reciept</h3>
+
+    <div class="dt">
+      <h5>Date:- &nbsp;</h5>
+      <input type="date" />
+    </div>
+
+    <hr />
+
+    <div class="box2">
+      <h4 class="nm">Name of Student :-</h4>
+      <input type="text" class="nmi" />
+
+      <table border="1px solid black">
+        <tr>
+          <th>COURSES OFFERED BY INSTITUTE</th>
+          <th>COURSE FEE</th>
+        </tr>
+
+        <tr>
+          <th>COURSES</th>
+          <th>
+            <select id="coarse" onchange="show()">
+              <option value="none">Select Coarse</option>
+              <option value="CS">B.E. (Computer Science)</option>
+              <option value="Mech">B.E. (Mechanical)</option>
+              <option value="Civil">B.E. (Civil)</option>
+              <option value="Elec">B.E. (Electronics)</option>
+              <option value="Auto">B.E. (Automobile)</option>
+              <option value="B.Sc">B.Sc.</option>
+            </select>
+          </th>
+        </tr>
+
+        <tr>
+          <th>COURSE FEES</th>
+          <td>
+            <h4 class="fil" id="fee"></h4>
+          </td>
+        </tr>
+
+        <tr>
+          <th>
+            GST Include
+            <select id="gst" onchange="percent()">
+              <option>None</option>
+              <option value="5">5%</option>
+              <option value="18">18%</option>
+              <option value="28">28%</option>
+            </select>
+          </th>
+          <td>
+            <h4 class="fil" id="gs"></h4>
+          </td>
+        </tr>
+
+        <tr>
+          <th>CGST</th>
+          <td>
+            <h4 class="fil" id="cg"></h4>
+          </td>
+        </tr>
+
+        <tr>
+          <th>SGST</th>
+          <td>
+            <h4 class="fil" id="sg"></h4>
+          </td>
+        </tr>
+
+        <tr>
+          <th>Total Fee Including Taxes</th>
+          <td>
+            <h4 class="fil" id="tfi"></h4>
+          </td>
+        </tr>
+      </table>
+
+      <button onclick="print()">Print Reciept</button>
+    </div>
+  </div>
+
+  <script>
+    function show() {
+      let _corse = document.getElementById("coarse").value;
+      if (_corse == "CS") {
+        let j = 150000;
+        document.getElementById("fee").innerHTML = j
+        document.getElementById('fee').value = j
+      } else if (_corse == "Mech") {
+        let p = 135000;
+        document.getElementById("fee").innerHTML = p
+        document.getElementById('fee').value = p
+      } else if (_corse == "Civil") {
+        let r = 115000;
+        document.getElementById("fee").innerHTML = r
+        document.getElementById('fee').value = r
+
+      }
+      else if (_corse == "Elec") {
+        let r = 125000;
+        document.getElementById("fee").innerHTML = r
+        document.getElementById('fee').value = r
+
+      }
+      else if (_corse == "Auto") {
+        let r = 145000;
+        document.getElementById("fee").innerHTML = r
+        document.getElementById('fee').value = r
+
+      }
+      else if (_corse == "B.Sc") {
+        let r = 35000;
+        document.getElementById("fee").innerHTML = r
+        document.getElementById('fee').value = r
+
+      }
+    var chek = document.getElementById('gst').value;
+    if(chek!=null){
+      percent()
+    }
+    }
+
+    function percent() {
+      var g = document.getElementById("fee").value;
+      var gstper = document.getElementById("gst").value;
+
+      document.getElementById("gs").innerHTML = (g * gstper) / 100;
+      document.getElementById('cg').innerHTML = (g * (gstper / 2)) / 100
+      document.getElementById('sg').innerHTML = (g * (gstper / 2)) / 100
+      document.getElementById('tfi').innerHTML = g + (g * gstper) / 100
+
+    }
+  </script>
+</body>
+
+</html>
